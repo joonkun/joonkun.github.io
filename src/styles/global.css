@@ -63,7 +63,7 @@
   --font-sans:
     "Geist", "Pretendard Variable", Pretendard, Inter, "Segoe UI", "Helvetica Neue", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, Arial, sans-serif;
-  --font-display: var(--font-sans);
+  --font-display: "Newsreader Variable", "Noto Serif KR", var(--font-serif);
   --font-serif:
     "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", ui-serif, serif;
   --font-mono:
@@ -910,3 +910,6 @@
 
 /* 한글: 단어 중간에서 줄이 바뀌지 않게 한다 */
 html[lang="ko"] body * { word-break: keep-all !important; overflow-wrap: break-word; }
+
+/* 세리프 제목은 자간을 덜 좁힌다 */
+.intro-title, .card-title, .article-title, .pagehead-title, .prose h2, .prose h3, .prose h4, .wordmark { letter-spacing: -0.01em !important; }
