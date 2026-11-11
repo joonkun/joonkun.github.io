@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import SiteFooter from "@/components/SiteFooter.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+import { visiblePosts } from "@/lib/posts";
+
+const allPosts = visiblePosts(await getCollection("posts"));
+---
+
+<BaseLayout title="소개" description="Joon(허재준)에 대해">
+  <SiteHeader posts={allPosts} />
+  <main id="content" class="outer">
+    <div class="canvas">
+      <header class="pagehead">
+        <p class="eyebrow">소개</p>
+        <h1 class="pagehead-title">Joon (허재준)</h1>
+        <p class="pagehead-description">{siteConfig.about}</p>
+      </header>
+
+      <div class="prose">
+        <h2>경력</h2>
+        <ul>
+          <li>Adriel, AI Product Manager (2026–)</li>
+          <li>Adriel, 일본 팀 Solutions Engineer (2025–2026)</li>
+          <li>개인 사업, 플랫폼 서비스 MVP 직접 구축</li>
+          <li>Salesforce, Technical Support</li>
+        </ul>
+
+        <h2>연락</h2>
+        <p>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </p>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>
