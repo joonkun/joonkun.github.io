@@ -48,8 +48,8 @@
   --muted-foreground: #6b6b73;
   --primary: #17171a;
   --primary-foreground: #ffffff;
-  --accent: #1d6b55;
-  --accent-strong: #144d3d;
+  --accent: #2f5fd0;
+  --accent-strong: #244bab;
   --accent-foreground: #ffffff;
   --border: #e6e6e8;
   --border-strong: #d2d2d6;
@@ -102,8 +102,8 @@
   --muted-foreground: #a2a2aa;
   --primary: #f2f2f3;
   --primary-foreground: #101012;
-  --accent: #7cc4a8;
-  --accent-strong: #a6d9c4;
+  --accent: #8aa9f2;
+  --accent-strong: #b3c7f7;
   --accent-foreground: #101012;
   --border: #2a2a2f;
   --border-strong: #45454c;
@@ -562,10 +562,13 @@
     transition: color var(--duration-fast) var(--ease-out);
   }
 
-  .nav-link:hover,
-  .nav-link:focus-visible,
   .nav-link[aria-current="page"] {
     color: var(--foreground);
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    color: var(--accent);
   }
 
   /* Hairline that wipes in from the left, and stays put for the current page. */
@@ -574,9 +577,9 @@
     right: 0;
     bottom: -0.4rem;
     left: 0;
-    height: 1px;
+    height: 2px;
     content: "";
-    background: currentColor;
+    background: var(--accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--duration) var(--ease-out);
@@ -912,3 +915,6 @@ html[lang="ko"] body * { word-break: keep-all !important; overflow-wrap: break-w
 
 /* 세리프 제목은 자간을 덜 좁힌다 */
 .intro-title, .card-title, .article-title, .pagehead-title, .prose h2, .prose h3, .prose h4, .wordmark { letter-spacing: -0.01em !important; }
+
+/* 링크에 마우스를 올리면 강조색 */
+.link-quiet:hover, .link-quiet:focus-visible, .link-sweep:hover, .link-sweep:focus-visible, .link-title:hover .link-title__text, .card-title a:hover { color: var(--accent) !important; }

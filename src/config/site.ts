@@ -45,13 +45,13 @@ export const siteConfig = {
 
 /** Header navigation. Add or remove entries freely; the header renders them in order. */
 export const navigation = [
-  { label: "글", href: "/posts/" },
-  { label: "노트", href: "/category/노트/" },
-  { label: "소개", href: "/about/" },
+  { label: "Writing", href: "/posts/" },
+  { label: "Notes", href: "/category/노트/" },
+  { label: "About", href: "/about/" },
 ];
 
 /** Secondary navigation rendered in the footer. */
 export const footerNavigation = [
-  { label: "메일", href: `mailto:${siteConfig.email}` },
+  { label: "Email", href: `mailto:${siteConfig.email}` },
   { label: "RSS", href: "/rss.xml" },
 ];
